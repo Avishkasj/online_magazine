@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg" style="background-color: #FB8500;">
     <div class="container-fluid">
       <!-- Image as an icon -->
       <a class="navbar-brand" href="#">
@@ -11,16 +11,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarText">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+            <router-link to="/register" class="nav-link">Register</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <router-link to="/login" class="nav-link">Login</router-link>
           </li>
         </ul>
 
@@ -31,9 +31,9 @@
           </a>
           <div class="dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-user"></i>
+               <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/user.png" alt="Icon" width="20" height="20">
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><hr class="dropdown-divider"></li>
@@ -54,6 +54,7 @@ export default {
 </script>
 
 <style scoped>
+/* Additional custom styles */
 .navbar-nav .nav-link {
   color: black; /* Set the text color to black */
 }
