@@ -1,124 +1,60 @@
- <script setup>
-import { useAuthStore } from "../stores/auth";
-
-const authStore = useAuthStore();
-</script>
 <template>
-  <nav class="rounded bg-indigo-900 text-white px-2 py-2.5 sm:px-4">
-    <div
-      class="container mx-auto flex flex-wrap items-center justify-between"
-      bis_skin_checked="1"
-    >
-      <a href="https://laraveller.com/" class="flex items-center">
-        Laraveller
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <!-- Image as an icon -->
+      <a class="navbar-brand" href="#">
+        <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/MAG.png" alt="Icon" width="50" height="50">
+        Magazine
       </a>
-      <button
-        data-collapse-toggle="navbar-default"
-        type="button"
-        class="
-          ml-3
-          inline-flex
-          items-center
-          rounded-lg
-          p-2
-          text-sm text-gray-500
-          hover:bg-gray-100
-          focus:outline-none focus:ring-2 focus:ring-gray-200
-          dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600
-          md:hidden
-        "
-        aria-controls="navbar-default"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="h-6 w-6"
-          aria-hidden="true"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="hidden w-full md:block md:w-auto"
-        id="navbar-default"
-        bis_skin_checked="1"
-      >
-        <ul
-          class="
-            mt-4
-            flex flex-col
-            rounded-lg
-            p-4
-            md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium
-          "
-        >
-          <li>
-            <router-link
-              :to="{ name: 'Home' }"
-              class="block rounded py-2 pr-4 pl-3 text-white"
-              aria-current="page"
-              >Home</router-link
-            >
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <template v-if="!authStore.user">
-            <li>
-              <router-link
-                :to="{ name: 'Login' }"
-                class="
-                  block
-                  rounded
-                  py-2
-                  pr-4
-                  pl-3
-                  text-gray-50
-                  hover:bg-gray-700
-                "
-                >Login</router-link
-              >
-            </li>
-            <li>
-              <router-link
-                :to="{ name: 'Register' }"
-                class="
-                  block
-                  rounded
-                  py-2
-                  pr-4
-                  pl-3
-                  text-gray-50
-                  hover:bg-gray-700
-                  md:border-0
-                "
-                >Register</router-link
-              >
-            </li>
-          </template>
-          <template v-else>
-            <button
-              @click="authStore.handleLogout"
-              class="
-                block
-                rounded
-                py-2
-                pr-4
-                pl-3
-                text-gray-50
-                hover:bg-gray-700
-                md:border-0
-              "
-            >
-              Logout
-            </button>
-          </template>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
         </ul>
+
+        <!-- Right corner icons -->
+        <div class="d-flex">
+          <a class="nav-link me-3" href="#">
+            <i class="fas fa-bell"></i>
+          </a>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- End of right corner icons -->
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  // Your Vue component options
+}
+</script>
+
+<style scoped>
+.navbar-nav .nav-link {
+  color: black; /* Set the text color to black */
+}
+</style>
