@@ -159,9 +159,6 @@
       <div class="container">
         <div class="row">
           <div class="col text-center mb-3">
-            <h1 class="display-4 font-weight-bolder">
-              Bootstrap 4 Cards With Background Image
-            </h1>
             <h1 class="lead">
               This Week Top Winners
             </h1>
