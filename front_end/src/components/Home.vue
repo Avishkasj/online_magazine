@@ -182,8 +182,7 @@
                   <small class="card-meta mb-2">Winner</small>
                   <h4 class="card-title mt-0">
                     <a class="text-dark" herf="https://creativemanner.com"
-                      >Web Developmet Lorem Ipsum Sit Amet Consectetur
-                      dipisi?</a
+                      >hello sample test</a
                     >
                   </h4>
                   <small><i class="far fa-clock"></i> October 15, 2024</small>
@@ -222,8 +221,7 @@
                   <small class="card-meta mb-2">Winner</small>
                   <h4 class="card-title mt-0">
                     <a class="text-dark" herf="https://creativemanner.com"
-                      >Creative Manner Lorem Ipsum Sit Amet Consectetur
-                      dipisi?</a
+                      >hello sample test</a
                     >
                   </h4>
                   <small><i class="far fa-clock"></i> October 15, 2024</small>
@@ -262,7 +260,7 @@
                   <small class="card-meta mb-2">Winner</small>
                   <h4 class="card-title mt-0">
                     <a class="text-dark" herf="https://creativemanner.com"
-                      >Design Studio Lorem Ipsum Sit Amet Consectetur dipisi?</a
+                      >hello sample test</a
                     >
                   </h4>
                   <small><i class="far fa-clock"></i> October 15, 2024</small>
@@ -302,7 +300,7 @@
                   <small class="card-meta mb-2">Winner</small>
                   <h4 class="card-title mt-0">
                     <a class="text-dark" herf="https://creativemanner.com"
-                      >UI/UX Design Lorem Ipsum Sit Amet Consectetur dipisi?</a
+                      >hello sample test</a
                     >
                   </h4>
                   <small><i class="far fa-clock"></i> October 15, 2024</small>
@@ -341,8 +339,7 @@
                   <small class="card-meta mb-2">Winner</small>
                   <h4 class="card-title mt-0">
                     <a class="text-dark" herf="https://creativemanner.com"
-                      >Creative Manner Design Lorem Ipsum Sit Amet Consectetur
-                      dipisi?</a
+                      >hello sample test</a
                     >
                   </h4>
                   <small><i class="far fa-clock"></i> October 15, 2024</small>
@@ -381,8 +378,7 @@
                   <small class="card-meta mb-2">Winner</small>
                   <h4 class="card-title mt-0">
                     <a class="text-dark" herf="https://creativemanner.com"
-                      >Creative Manner Design Lorem Ipsum Sit Amet Consectetur
-                      dipisi?</a
+                      >hello sample test</a
                     >
                   </h4>
                   <small><i class="far fa-clock"></i> October 15, 2024</small>
