@@ -2,6 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/nav',
       name: 'nav',
       component: () => import('../components/Nav.vue')
+    },
+    {
+      path: '/footer',
+      name: 'footer',
+      component: () => import('../components/Footer.vue')
     },
     {
         path: '/book',
