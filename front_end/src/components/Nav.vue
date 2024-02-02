@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg" style="background-color: #FB8500;">
+  <nav class="navbar navbar-expand-lg" style="background-color: #f7ede2;">
     <div class="container-fluid">
       <!-- Image as an icon -->
       <a class="navbar-brand" href="#">
