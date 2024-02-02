@@ -46,6 +46,46 @@
 
 
 
+<div class="container">
+  <div class="row m-5">
+    <!-- Left side card -->
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">New Week</h5>
+          <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" class="card-img-top" alt="Book Title" width="400" height="600">
+          <!-- <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/MAG.png" alt="Icon" width="50" height="50"> -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right side text content -->
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Download, Color, and Upload</h5>
+          <p class="card-text">Here's a fun activity for you! Follow these steps:</p>
+          <ol>
+            <li>Download the image by clicking the "Download Image" button below.</li>
+            <li>Color the image creatively using your favorite colors, markers, or crayons.</li>
+            <li>Upload your colored version of the image using the "Upload Image" button.</li>
+          </ol>
+          <p class="card-text">Each week, we'll select a winner from the uploaded images!</p>
+          <a href="/path/to/downloadable/image.jpg" download="coloring_image.jpg" class="btn btn-primary">Download Image</a>
+          <input type="file" accept="image/*" id="imageUpload" class="form-control mt-3">
+          <button onclick="uploadImage()" class="btn btn-success mt-3">Upload Image</button>
+          <p class="mt-3" id="uploadMessage"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
     <!-- Content Area -->
     <router-view />
     <!-- Horizontal Scrollable Product Carousel -->
@@ -166,7 +206,7 @@
                     />
                     <div class="media-body">
                       <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <small>From UK</small>
                     </div>
                   </div>
                 </div>
@@ -206,7 +246,7 @@
                     />
                     <div class="media-body">
                       <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <small>From UK</small>
                     </div>
                   </div>
                 </div>
@@ -245,7 +285,7 @@
                     />
                     <div class="media-body">
                       <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <small>From UK</small>
                     </div>
                   </div>
                 </div>
@@ -285,7 +325,7 @@
                     />
                     <div class="media-body">
                       <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <small>From UK</small>
                     </div>
                   </div>
                 </div>
@@ -325,7 +365,7 @@
                     />
                     <div class="media-body">
                       <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <small>From UK</small>
                     </div>
                   </div>
                 </div>
@@ -365,7 +405,7 @@
                     />
                     <div class="media-body">
                       <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <small>From UK</small>
                     </div>
                   </div>
                 </div>
