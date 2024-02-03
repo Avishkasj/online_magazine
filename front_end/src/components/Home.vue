@@ -2,8 +2,6 @@
   <div>
     <!-- Include the navigation bar component -->
     <NavBar />
-  
-
 
 <header>
  <div>
@@ -74,8 +72,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 
