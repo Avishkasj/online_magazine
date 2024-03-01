@@ -17,4 +17,11 @@ Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
-require __DIR__.'/auth.php';
+// Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
+// Route::post('/register', 'AuthController@register');
+
+Route::get('/csrf-token', function () {
+    return response()->json(['csrf_token' => csrf_token()]);
+});
+
+// require __DIR__.'/auth.php';

@@ -1,10 +1,5 @@
 <template>
-<!--
-Author: Colorlib
-Author URL: https://colorlib.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,11 +17,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<h1>LogIn Form</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
+				<form @submit.prevent="login">
 					
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" v-model="email" required="">
                
-					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<input class="text" type="password" name="password" placeholder="Password" v-model="password" required="">
                     
 				
 					
@@ -58,17 +53,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </html>
 </template>
 
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
+
+<script>
+
+import axios from 'axios';
+
+export default {
+  data(){
+    return{
+      email:"",
+      password:"",
+    }
+  },
+  methods: {
+    async login(){
+      const response = await axios.post(
+        `http://127.0.0.1:8000/api/login`,
+        {
+          email: this.email,
+          password: this.password,
+        },
+        {
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "Access-Control-Allow-Credentials": "true",
+          },
+          withCredentials: true,
+        }
+      );
+
+      if (response.status == 200) {
+        alert(response.data.message);
+        console.log(response);
+      }
+    }
+  }
+}
+</script>
+
 <style >
 
-/*--
-Author: Colorlib
-Author URL: https://colorlib.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/*-- reset --*/
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;

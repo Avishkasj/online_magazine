@@ -1,73 +1,153 @@
 <template>
-<!--
+  <!--
 Author: Colorlib
 Author URL: https://colorlib.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!DOCTYPE html>
-<html>
-<head>
-<title>SignUp Form</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- //Custom Theme files -->
-<!-- web font -->
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- //web font -->
-</head>
-<body>
-	<!-- main -->
-	<div class="main-w3layouts wrapper">
-		<h1>SignUp Form</h1>
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<form action="#" method="post">
-					<input class="text" type="text" name="Username" placeholder="Username" required="">
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
-                    <input class="text email" type="text" name="age" placeholder="Age" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
-                    
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
-					<div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>I Agree To The Terms & Conditions</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
-					<input type="submit" value="SIGNUP">
-				</form>
-				<p>Don't have an Account? <a href="#"> Login Now!</a></p>
-			</div>
-		</div>
-		<!-- copyright -->
-		<div class="colorlibcopy-agile">
-			<p>© 2024 MAG<a href="https://mag.com/" target="_blank"></a></p>
-		</div>
-		<!-- //copyright -->
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
-	<!-- //main -->
-</body>
-</html>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>SignUp Form</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!-- //Custom Theme files -->
+      <!-- web font -->
+      <link
+        href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i"
+        rel="stylesheet"
+      />
+      <!-- //web font -->
+    </head>
+    <body>
+      <!-- main -->
+      <div class="main-w3layouts wrapper">
+        <h1>SignUp Form</h1>
+        <div class="main-agileinfo">
+          <div class="agileits-top">
+            <form @submit.prevent="register">
+              <input
+                class="text"
+                type="text"
+                name="Username"
+                placeholder="Username"
+                v-model="username"
+                required=""
+              />
+              <input
+                class="text email"
+                type="email"
+                name="email"
+                placeholder="Email"
+                v-model="email"
+                required=""
+              />
+              <input
+                class="text email"
+                type="text"
+                name="age"
+                placeholder="Age"
+                v-model="age"
+                required=""
+              />
+              <input
+                class="text"
+                type="password"
+                name="password"
+                placeholder="Password"
+                v-model="password"
+                required=""
+              />
+
+              <input
+                class="text w3lpass"
+                type="password"
+                name="password"
+                placeholder="Confirm Password"
+                v-model="confirmPassword"
+                required=""
+              />
+              <div class="wthree-text">
+                <label class="anim">
+                  <input type="checkbox" class="checkbox" required="" />
+                  <span>I Agree To The Terms & Conditions</span>
+                </label>
+                <div class="clear"></div>
+              </div>
+              <input type="submit" value="SIGNUP" />
+            </form>
+            <p>Don't have an Account? <a href="#"> Login Now!</a></p>
+          </div>
+        </div>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile">
+          <p>© 2024 MAG<a href="https://mag.com/" target="_blank"></a></p>
+        </div>
+        <!-- //copyright -->
+        <ul class="colorlib-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <!-- //main -->
+    </body>
+  </html>
 </template>
 
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      username: "",
+      email: "",
+      age: "",
+      password: "",
+      confirmPassword: "",
+    };
+  },
+  methods: {
+    async register() {
+     
+      const response = await axios.post(
+        `http://127.0.0.1:8000/api/register`,
+        {
+          username: this.username,
+          email: this.email,
+          age: this.age,
+          password: this.password,
+        },
+        {
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "Access-Control-Allow-Credentials": "true",
+          },
+          withCredentials: true,
+        }
+      );
+
+      if (response.status == 201) {
+        alert("success");
+      }
+     
+      console.log(response);
+    },
+  },
+};
+</script>
+
+
 <!-- Custom Theme files -->
 <style >
-
 /*--
 Author: Colorlib
 Author URL: https://colorlib.com
@@ -75,7 +155,86 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /*-- reset --*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+nav ul,
+nav li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -84,22 +243,37 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -179,15 +353,15 @@ img {
 
 /*-- end reset --*/
 body {
-  background: #FB8500;
+  background: #fb8500;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #FB8500, #fda847);
-  background: -moz-linear-gradient(to top, #FB8500, #fda847);
-  background: -o-linear-gradient(to top, #FB8500, #fda847);
-  background: linear-gradient(to top, #FB8500, #fda847);
+  background: -webkit-linear-gradient(to top, #fb8500, #fda847);
+  background: -moz-linear-gradient(to top, #fb8500, #fda847);
+  background: -o-linear-gradient(to top, #fb8500, #fda847);
+  background: linear-gradient(to top, #fb8500, #fda847);
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -197,7 +371,7 @@ h1 {
   font-weight: 100;
   text-transform: capitalize;
   letter-spacing: 4px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /*-- main --*/
@@ -216,7 +390,9 @@ h1 {
   padding: 3em;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   font-size: 0.9em;
   color: #fff;
   font-weight: 100;
@@ -233,22 +409,25 @@ input[type="text"], input[type="email"], input[type="password"] {
   background-size: 100%;
   background-repeat: no-repeat;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-input.email, input.text.w3lpass {
+input.email,
+input.text.w3lpass {
   margin: 2em 0;
 }
 
-.text:focus, .text:valid {
+.text:focus,
+.text:valid {
   box-shadow: none;
   outline: none;
   background-position: 0 0;
 }
 
-.text:focus::-webkit-input-placeholder, .text:valid::-webkit-input-placeholder {
+.text:focus::-webkit-input-placeholder,
+.text:valid::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
-  font-size: .9em;
+  font-size: 0.9em;
   -webkit-transform: translateY(-30px);
   -moz-transform: translateY(-30px);
   -o-transform: translateY(-30px);
@@ -277,11 +456,11 @@ input.email, input.text.w3lpass {
 }
 
 input[type="submit"] {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #fff;
-  background: #FB8500;
+  background: #fb8500;
   outline: none;
-  border: 1px solid #FB8500;
+  border: 1px solid #fb8500;
   cursor: pointer;
   padding: 0.9em;
   -webkit-appearance: none;
@@ -291,12 +470,12 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  -webkit-transition: .5s all;
-  -moz-transition: .5s all;
-  -o-transition: .5s all;
-  -ms-transition: .5s all;
-  transition: .5s all;
-  background: #FB8500;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  transition: 0.5s all;
+  background: #fb8500;
 }
 
 .agileits-top p {
@@ -309,14 +488,14 @@ input[type="submit"]:hover {
 
 .agileits-top p a {
   color: #fff;
-  -webkit-transition: .5s all;
-  -moz-transition: .5s all;
-  transition: .5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  transition: 0.5s all;
   font-weight: 400;
 }
 
 .agileits-top p a:hover {
-  color: #FB8500;
+  color: #fb8500;
 }
 
 /*-- //main --*/
@@ -330,7 +509,7 @@ input[type="submit"]:hover {
 }
 
 input.checkbox {
-  background: #FB8500;
+  background: #fb8500;
   cursor: pointer;
   width: 1.2em;
   height: 1.2em;
@@ -354,10 +533,10 @@ input.checkbox:after {
   width: 1.2em;
   height: 1.2em;
   border: 1px solid #fff;
-  -webkit-transition: .4s ease-in-out;
-  -moz-transition: .4s ease-in-out;
-  -o-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 input.checkbox:checked:after {
@@ -366,7 +545,7 @@ input.checkbox:checked:after {
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  height: .5rem;
+  height: 0.5rem;
   border-color: #fff;
   border-top-color: transparent;
   border-right-color: transparent;
@@ -378,10 +557,10 @@ input.checkbox:checked:after {
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  height: .5rem;
+  height: 0.5rem;
   border-color: transparent;
   border-right-color: transparent;
-  animation: .4s rippling .4s ease;
+  animation: 0.4s rippling 0.4s ease;
   animation-fill-mode: forwards;
 }
 
@@ -404,7 +583,7 @@ input.checkbox:checked:after {
 }
 
 .colorlibcopy-agile p {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #fff;
   line-height: 1.8em;
   letter-spacing: 1px;
@@ -599,13 +778,15 @@ input.checkbox:checked:after {
 }
 
 /*-- responsive-design --*/
-@media(max-width:1440px) {
-  input[type="text"], input[type="email"], input[type="password"] {
+@media (max-width: 1440px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
     width: 94%;
   }
 }
 
-@media(max-width:1366px) {
+@media (max-width: 1366px) {
   h1 {
     font-size: 2.6em;
   }
@@ -623,25 +804,25 @@ input.checkbox:checked:after {
   }
 }
 
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
   .main-agileinfo {
     width: 40%;
   }
 }
 
-@media(max-width:1080px) {
+@media (max-width: 1080px) {
   .main-agileinfo {
     width: 46%;
   }
 }
 
-@media(max-width:1024px) {
+@media (max-width: 1024px) {
   .main-agileinfo {
     width: 49%;
   }
 }
 
-@media(max-width:991px) {
+@media (max-width: 991px) {
   h1 {
     font-size: 2.4em;
   }
@@ -651,40 +832,43 @@ input.checkbox:checked:after {
   }
 }
 
-@media(max-width:900px) {
+@media (max-width: 900px) {
   .main-agileinfo {
     width: 58%;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
     width: 93%;
   }
 }
 
-@media(max-width:800px) {
+@media (max-width: 800px) {
   h1 {
     font-size: 2.2em;
   }
 }
 
-@media(max-width:736px) {
+@media (max-width: 736px) {
   .main-agileinfo {
     width: 62%;
   }
 }
 
-@media(max-width:667px) {
+@media (max-width: 667px) {
   .main-agileinfo {
     width: 67%;
   }
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
   .agileits-top {
     padding: 2.2em;
   }
 
-  input.email, input.text.w3lpass {
+  input.email,
+  input.text.w3lpass {
     margin: 1.5em 0;
   }
 
@@ -698,7 +882,7 @@ input.checkbox:checked:after {
   }
 }
 
-@media(max-width:568px) {
+@media (max-width: 568px) {
   .main-agileinfo {
     width: 75%;
   }
@@ -708,7 +892,7 @@ input.checkbox:checked:after {
   }
 }
 
-@media(max-width:480px) {
+@media (max-width: 480px) {
   h1 {
     font-size: 1.8em;
     letter-spacing: 3px;
@@ -718,7 +902,9 @@ input.checkbox:checked:after {
     padding: 1.8em;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
     width: 91%;
   }
 
@@ -727,7 +913,7 @@ input.checkbox:checked:after {
   }
 }
 
-@media(max-width:414px) {
+@media (max-width: 414px) {
   h1 {
     font-size: 1.8em;
     letter-spacing: 2px;
@@ -738,11 +924,13 @@ input.checkbox:checked:after {
     margin: 1.5em auto;
   }
 
-  .text:focus, .text:valid {
+  .text:focus,
+  .text:valid {
     background-position: 0 0px;
   }
 
-  .wthree-text ul li, .wthree-text ul li:nth-child(2) {
+  .wthree-text ul li,
+  .wthree-text ul li:nth-child(2) {
     display: block;
     float: none;
   }
@@ -765,7 +953,7 @@ input.checkbox:checked:after {
   }
 }
 
-@media(max-width:384px) {
+@media (max-width: 384px) {
   .main-agileinfo {
     width: 88%;
   }
@@ -775,13 +963,13 @@ input.checkbox:checked:after {
   }
 }
 
-@media(max-width:375px) {
+@media (max-width: 375px) {
   .agileits-top p {
     letter-spacing: 0px;
   }
 }
 
-@media(max-width:320px) {
+@media (max-width: 320px) {
   .main-w3layouts {
     padding: 1.5em 0 0;
   }
@@ -794,7 +982,9 @@ input.checkbox:checked:after {
     margin: 0 0 1em;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
     width: 89.5%;
     font-size: 0.85em;
   }
@@ -809,18 +999,19 @@ input.checkbox:checked:after {
     margin: 1em auto;
   }
 
-  .text:focus, .text:valid {
+  .text:focus,
+  .text:valid {
     background-position: 0 0px;
   }
 
   input[type="submit"] {
     margin: 1.5em 0;
     padding: 0.8em;
-    font-size: .85em;
+    font-size: 0.85em;
   }
 
   .colorlibcopy-agile p {
-    font-size: .85em;
+    font-size: 0.85em;
   }
 
   .wthree-text label {
@@ -831,5 +1022,4 @@ input.checkbox:checked:after {
     padding: 1em 0 0;
   }
 }
-
 </style>

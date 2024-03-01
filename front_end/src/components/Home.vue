@@ -1,3 +1,5 @@
+
+
 <template>
   <div>
     <!-- Include the navigation bar component -->
@@ -558,6 +560,7 @@
 <script>
 // Import the navigation bar component
 import NavBar from "../components/Nav.vue";
+
 
 export default {
   components: {
