@@ -85,6 +85,8 @@ export default {
       if (response.status == 200) {
         alert(response.data.message);
         console.log(response);
+
+        this.$router.push({ name: 'home' }); 
       }
     }
   }

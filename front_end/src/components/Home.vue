@@ -144,265 +144,126 @@
 
 
 
+<section class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center mb-3">
+        <h1 class="lead">This Week Top Winners</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark">
+          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 1">
+          <div class="card-body">
+            <h4 class="card-title">Title 1</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark">
+          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 2">
+          <div class="card-body">
+            <h4 class="card-title">Title 2</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark">
+          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 3">
+          <div class="card-body">
+            <h4 class="card-title">Title 3</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark">
+          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 4">
+          <div class="card-body">
+            <h4 class="card-title">Title 4</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark">
+          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 5">
+          <div class="card-body">
+            <h4 class="card-title">Title 5</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card text-dark">
+          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 6">
+          <div class="card-body">
+            <h4 class="card-title">Title 6</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
     <!-- count dowc -->
 
 
 
-
-    <!-- card start -->
-
-    <section class="wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col text-center mb-3">
-            <h1 class="lead">
-              This Week Top Winners
-            </h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div
-              class="card text-dark card-has-bg click-col"
-              style="
-                background-image: url('https://source.unsplash.com/600x900/?tech,street');
-              "
-            >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?tech,street"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
-              <div class="card-img-overlay d-flex flex-column">
-                <div class="card-body">
-                  <small class="card-meta mb-2">Winner</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >hello sample test</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2024</small>
-                </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
-                      alt="Generic placeholder image"
-                      style="max-width: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>From UK</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div
-              class="card text-dark card-has-bg click-col"
-              style="
-                background-image: url('https://source.unsplash.com/600x900/?tree,nature');
-              "
-            >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?tree,nature"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
-              <div class="card-img-overlay d-flex flex-column">
-                <div class="card-body">
-                  <small class="card-meta mb-2">Winner</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >hello sample test</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2024</small>
-                </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
-                      alt="Generic placeholder image"
-                      style="max-width: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>From UK</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div
-              class="card text-dark card-has-bg click-col"
-              style="
-                background-image: url('https://source.unsplash.com/600x900/?computer,design');
-              "
-            >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?computer,design"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
-              <div class="card-img-overlay d-flex flex-column">
-                <div class="card-body">
-                  <small class="card-meta mb-2">Winner</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >hello sample test</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2024</small>
-                </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
-                      alt="Generic placeholder image"
-                      style="max-width: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>From UK</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div
-              class="card text-dark card-has-bg click-col"
-              style="
-                background-image: url('https://source.unsplash.com/600x900/?tech,street');
-              "
-            >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?tech,street"
-                alt=" Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
-              <div class="card-img-overlay d-flex flex-column">
-                <div class="card-body">
-                  <small class="card-meta mb-2">Winner</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >hello sample test</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2024</small>
-                </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
-                      alt="Generic placeholder image"
-                      style="max-width: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>From UK</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div
-              class="card text-dark card-has-bg click-col"
-              style="
-                background-image: url('https://source.unsplash.com/600x900/?tree,nature');
-              "
-            >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?tree,nature"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
-              <div class="card-img-overlay d-flex flex-column">
-                <div class="card-body">
-                  <small class="card-meta mb-2">Winner</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >hello sample test</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2024</small>
-                </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
-                      alt="Generic placeholder image"
-                      style="max-width: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>From UK</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div
-              class="card text-dark card-has-bg click-col"
-              style="
-                background-image: url('https://source.unsplash.com/600x900/?computer,design');
-              "
-            >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?computer,design"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
-              <div class="card-img-overlay d-flex flex-column">
-                <div class="card-body">
-                  <small class="card-meta mb-2">Winner</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >hello sample test</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2024</small>
-                </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
-                      alt="Generic placeholder image"
-                      style="max-width: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>From UK</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="container">
+  <h2 class="mt-5 mb-4">Latest Blog Posts</h2>
+  <div class="row">
+    <!-- Blog Post 1 -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Blog Post Title 1</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non purus vitae ipsum consequat.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">January 1, 2024</small>
+            <a href="#" class="btn btn-sm btn-outline-secondary">Read more</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- //card end -->
+    <!-- Blog Post 2 -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Blog Post Title 2</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non purus vitae ipsum consequat.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">January 2, 2024</small>
+            <a href="#" class="btn btn-sm btn-outline-secondary">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Post 3 -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Blog Post Title 3</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non purus vitae ipsum consequat.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">January 3, 2024</small>
+            <a href="#" class="btn btn-sm btn-outline-secondary">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+ 
 
     <!-- Add the Footer component here -->
     <Footer />
