@@ -5,78 +5,146 @@
     <!-- Include the navigation bar component -->
     <NavBar />
 
-<header>
- <div>
+    <header>
+      <div>
         <div class="header-blue">
-            <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-            </nav>
-            <div class="container hero">
-                <div class="row">
-                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-                        <h1>Online Magazine</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br></p>
-                        <button
-                            class="btn btn-light btn-lg action-button" type="button">Learn More<i class="fa fa-long-arrow-right ml-2"></i></button>
-                    </div>
-                    <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
-                        <div class="iphone-mockup">
-						<img class="device" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/buny.png">
-                          <!--  <div class="screen">
+          <nav
+            class="navbar navbar-light navbar-expand-md navigation-clean-search"
+          ></nav>
+          <div class="container hero">
+            <div class="row">
+              <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                <h1>Online Magazine</h1>
+                <p>
+                  Welcome to MAG, where imagination meets exploration! Our online magazine is a vibrant hub
+                   designed exclusively for young minds to embark on thrilling adventures through the power of reading,
+                    creativity, and discovery.<br />
+                </p>
+                <button
+                  class="btn btn-light btn-lg action-button"
+                  type="button"
+                >
+                  Learn More<i class="fa fa-long-arrow-right ml-2"></i>
+                </button>
+              </div>
+              <div
+                class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder"
+              >
+                <div class="iphone-mockup">
+                  <img
+                    class="device"
+                    src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/buny.png"
+                  />
+                  <!--  <div class="screen">
 							</div>
 							
 							-->
-                        </div>
-                    </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
+    <div class="container">
+      <div class="row m-5">
+        <!-- Left side card -->
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">New Week</h5>
+              <img
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png"
+                class="card-img-top"
+                alt="Book Title"
+                width="400"
+                height="600"
+              />
+              <!-- <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/MAG.png" alt="Icon" width="50" height="50"> -->
+            </div>
+          </div>
+        </div>
 
+        <!-- Right side text content -->
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Download, Color, and Upload</h5>
+              <p class="card-text">
+                Here's a fun activity for you! Follow these steps:
+              </p>
+              <ol>
+                <li>
+                  Download the image by clicking the "Download Image" button
+                  below.
+                </li>
+                <li>
+                  Color the image creatively using your favorite colors,
+                  markers, or crayons.
+                </li>
+                <li>
+                  Upload your colored version of the image using the "Upload
+                  Image" button.
+                </li>
+              </ol>
+              <p class="card-text">
+                Each week, we'll select a winner from the uploaded images!
+              </p>
+              <a
+                href="/path/to/downloadable/image.jpg"
+                download="coloring_image.jpg"
+                class="btn btn-primary"
+                >Download Image</a
+              >
+              <!-- Input for uploading image -->
+              <input
+                type="file"
+                @change="previewImage"
+                accept="image/*"
+                style="margin-bottom: 10px"
+              />
 
+              <!-- Image preview -->
+              <div v-if="imageUrl">
+                <img
+                  :src="imageUrl"
+                  alt="Preview"
+                  style="
+                    max-width: 300px;
+                    max-height: 300px;
+                    margin-bottom: 10px;
+                  "
+                />
+              </div>
 
+              <!-- Upload Button -->
+              <button
+                class="btn btn-primary"
+                @click="uploaduImage"
+                :disabled="!selectedImage"
+              >
+                Upload Image
+              </button>
 
-
-
-
-<div class="container">
-  <div class="row m-5">
-    <!-- Left side card -->
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">New Week</h5>
-          <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" class="card-img-top" alt="Book Title" width="400" height="600">
-          <!-- <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/MAG.png" alt="Icon" width="50" height="50"> -->
+              <!-- Upload success message -->
+              <div
+                v-if="uploadSuccess"
+                class="alert alert-success"
+                role="alert"
+              >
+                Image uploaded successfully!
+              </div>
+              <!-- Upload error message -->
+              <div v-if="uploadError" class="alert alert-danger" role="alert">
+                Error uploading image. Please try again.
+              </div>
+              <p class="mt-3" id="uploadMessage"></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
-    <!-- Right side text content -->
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Download, Color, and Upload</h5>
-          <p class="card-text">Here's a fun activity for you! Follow these steps:</p>
-          <ol>
-            <li>Download the image by clicking the "Download Image" button below.</li>
-            <li>Color the image creatively using your favorite colors, markers, or crayons.</li>
-            <li>Upload your colored version of the image using the "Upload Image" button.</li>
-          </ol>
-          <p class="card-text">Each week, we'll select a winner from the uploaded images!</p>
-          <a href="/path/to/downloadable/image.jpg" download="coloring_image.jpg" class="btn btn-primary">Download Image</a>
-          <input type="file" accept="image/*" id="imageUpload" class="form-control mt-3">
-          <button onclick="uploadImage()" class="btn btn-success mt-3">Upload Image</button>
-          <p class="mt-3" id="uploadMessage"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
     <!-- Content Area -->
     <router-view />
@@ -89,10 +157,17 @@
           <!-- Card 1 -->
           <div class="col">
             <div class="card">
-              <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/book1.jpeg" class="card-img-top" alt="Book Title"  height="300">
+              <img
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/sb1.jpeg"
+                class="card-img-top"
+                alt="Book Title"
+                height="350"
+              />
               <div class="card-body">
-                <p class="card-text">Book Title</p>
-                <h4 class="card-text">Book Title</h4>
+                <p class="card-text">THE WAY OF THE WOODS</p>
+                <a href="https://monkeypen.com/blogs/news/the-way-of-the-woods-free-children-book" class="card-link">
+                  <p class="card-text">Read More</p>
+                </a>
               </div>
             </div>
           </div>
@@ -100,321 +175,547 @@
           <!-- Card 2 -->
           <div class="col">
             <div class="card">
-              <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/book1.jpeg" class="card-img-top" alt="Book Title" height="300">
+              <img
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/sb2.jpeg"
+                class="card-img-top"
+                alt="Book Title"
+                 height="350"
+              />
               <div class="card-body">
-                <p class="card-text">Book Title</p>
+                <p class="card-text">PIRATES COVE</p>
+                 <a href="https://monkeypen.com/blogs/news/pirates-cove-free-children-book" class="card-link">
+                  <p class="card-text">Read More</p>
+                </a>
               </div>
             </div>
           </div>
           <!-- Card 3 -->
           <div class="col">
             <div class="card">
-              <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/book1.jpeg" class="card-img-top" alt="Book Title" height="300">
+              <img
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/sb3.jpeg"
+                class="card-img-top"
+                alt="Book Title"
+                height="350"
+              />
               <div class="card-body">
-                <p class="card-text">Book Title</p>
+                <p class="card-text">THE HIKE</p>
+                 <a href="https://monkeypen.com/blogs/news/the-hike-free-children-book" class="card-link">
+                  <p class="card-text">Read More</p>
+                </a>
               </div>
             </div>
           </div>
 
-        <!-- Card 4 -->
+          <!-- Card 4 -->
           <div class="col">
             <div class="card">
-              <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/book1.jpeg" class="card-img-top" alt="Book Title" height="300">
+              <img
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/sb4.jpeg"
+                class="card-img-top"
+                alt="Book Title"
+                 height="350"
+              />
               <div class="card-body">
-                <p class="card-text">Book Title</p>
+                <p class="card-text">I FOUND A FROG</p>
+                 <a href="https://monkeypen.com/blogs/news/i-found-a-frog-free-children-book" class="card-link">
+                  <p class="card-text">Read More</p>
+                </a>
               </div>
             </div>
           </div>
           <!-- Card 5 -->
           <div class="col">
             <div class="card">
-             <img src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/book1.jpeg" class="card-img-top" alt="Book Title" height="300">
+              <img
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/sb5.jpeg"
+                class="card-img-top"
+                alt="Book Title"
+                height="350"
+              />
               <div class="card-body">
-                <p class="card-text">Book Title</p>
+                <p class="card-text">DO YOU WONDER </p>
+                <a href="https://monkeypen.com/blogs/news/do-you-wonder-how-snakes-slither-free-children-book" class="card-link">
+                  <p class="card-text">Read More</p>
+                </a>
               </div>
             </div>
           </div>
-     
-         
+
           <!-- Add more cards as needed -->
         </div>
       </div>
     </section>
 
-
-
-
-<section class="wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col text-center mb-3">
-        <h1 class="lead">This Week Top Winners</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-        <div class="card text-dark">
-          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 1">
-          <div class="card-body">
-            <h4 class="card-title">Title 1</h4>
+    <section class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center mb-3">
+            <h1 class="lead">This Week Top Winners</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card text-dark">
+              <img
+                class="card-img"
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png"
+                alt="Image 1"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Winner 1</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card text-dark">
+              <img
+                class="card-img"
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png"
+                alt="Image 2"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Winner 2</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card text-dark">
+              <img
+                class="card-img"
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png"
+                alt="Image 3"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Winner 3</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card text-dark">
+              <img
+                class="card-img"
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png"
+                alt="Image 4"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Winner 4</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card text-dark">
+              <img
+                class="card-img"
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png"
+                alt="Image 5"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Winner 5</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card text-dark">
+              <img
+                class="card-img"
+                src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png"
+                alt="Image 6"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Winner 6</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-        <div class="card text-dark">
-          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 2">
-          <div class="card-body">
-            <h4 class="card-title">Title 2</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-        <div class="card text-dark">
-          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 3">
-          <div class="card-body">
-            <h4 class="card-title">Title 3</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-        <div class="card text-dark">
-          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 4">
-          <div class="card-body">
-            <h4 class="card-title">Title 4</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-        <div class="card text-dark">
-          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 5">
-          <div class="card-body">
-            <h4 class="card-title">Title 5</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-        <div class="card text-dark">
-          <img class="card-img" src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/forp1.png" alt="Image 6">
-          <div class="card-body">
-            <h4 class="card-title">Title 6</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- count dowc -->
+
+    <div class="container">
+      <h2 class="mt-5 mb-4">Latest Blog Posts</h2>
+      <div class="row">
+        <!-- Blog Post 1 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy1.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">10 holiday facts</h5>
+              <p class="card-text">
+                We at B. are always keen to discover something new, no matter
+                the season! And given that festive celebrations are right around
+                the corner,
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 1, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/10-fun-holiday-facts/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy2.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Benefits of music toy</h5>
+              <p class="card-text">
+                Make some noise with musical toys from B. toys! Explore our
+                creative and engaging line of musical toys for kids and toddlers
+                in this handy gift guide
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 2, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/3-benefits-of-musical-toys-top-gift-ideas/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy3.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Gifts for Kids: Stocking Stuffers</h5>
+              <p class="card-text">
+                s a magical place filled with friendly characters, musical
+                adventures, and… toys that double as great stocking stuffers! If
+                you’re looking to leave little
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 3, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/gifts-for-kids-stocking-stuffers/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <div class="container">
+      <div class="row">
+        <!-- Blog Post 1 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy4.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">10 holiday facts</h5>
+              <p class="card-text">
+                We at B. are always keen to discover something new, no matter
+                the season! And given that festive celebrations are right around
+                the corner,
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 1, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/10-fun-holiday-facts/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy5.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Benefits of music toy</h5>
+              <p class="card-text">
+                Make some noise with musical toys from B. toys! Explore our
+                creative and engaging line of musical toys for kids and toddlers
+                in this handy gift guide
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 2, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/3-benefits-of-musical-toys-top-gift-ideas/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy6.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Gifts for Kids: Stocking Stuffers</h5>
+              <p class="card-text">
+                s a magical place filled with friendly characters, musical
+                adventures, and… toys that double as great stocking stuffers! If
+                you’re looking to leave little
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 3, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/gifts-for-kids-stocking-stuffers/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
 
     <div class="container">
-  <h2 class="mt-5 mb-4">Latest Blog Posts</h2>
-  <div class="row">
-    <!-- Blog Post 1 -->
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Blog Post Title 1</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non purus vitae ipsum consequat.</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <small class="text-muted">January 1, 2024</small>
-            <a href="#" class="btn btn-sm btn-outline-secondary">Read more</a>
+      <div class="row">
+        <!-- Blog Post 1 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy7.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">10 holiday facts</h5>
+              <p class="card-text">
+                We at B. are always keen to discover something new, no matter
+                the season! And given that festive celebrations are right around
+                the corner,
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 1, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/10-fun-holiday-facts/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy8.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Benefits of music toy</h5>
+              <p class="card-text">
+                Make some noise with musical toys from B. toys! Explore our
+                creative and engaging line of musical toys for kids and toddlers
+                in this handy gift guide
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 2, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/3-benefits-of-musical-toys-top-gift-ideas/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img
+              src="/Users/avishkasupun/Documents/online_magazine/front_end/src/assets/toy9.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Gifts for Kids: Stocking Stuffers</h5>
+              <p class="card-text">
+                s a magical place filled with friendly characters, musical
+                adventures, and… toys that double as great stocking stuffers! If
+                you’re looking to leave little
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">January 3, 2024</small>
+                <a
+                  href="https://mybtoys.com/blog/gifts-for-kids-stocking-stuffers/"
+                  class="btn btn-sm btn-outline-secondary"
+                  >Read more</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Blog Post 2 -->
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Blog Post Title 2</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non purus vitae ipsum consequat.</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <small class="text-muted">January 2, 2024</small>
-            <a href="#" class="btn btn-sm btn-outline-secondary">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Blog Post 3 -->
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Blog Post Title 3</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non purus vitae ipsum consequat.</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <small class="text-muted">January 3, 2024</small>
-            <a href="#" class="btn btn-sm btn-outline-secondary">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
- 
 
     <!-- Add the Footer component here -->
     <Footer />
 
-
-
-  <!-- Footer -->
-  <footer
-          class="text-center text-lg-start text-white"
-          style="background-color: #45526e"
-          >
-    <!-- Grid container -->
-    <div class="container p-4 pb-0">
-      <!-- Section: Links -->
-      <section class="">
-        <!--Grid row-->
-        <div class="row">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              Company name
-            </h6>
-            <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <hr class="w-100 clearfix d-md-none" />
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-            <p>
-              <a class="text-white">MDBootstrap</a>
-            </p>
-            <p>
-              <a class="text-white">MDWordPress</a>
-            </p>
-            <p>
-              <a class="text-white">BrandFlow</a>
-            </p>
-            <p>
-              <a class="text-white">Bootstrap Angular</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <hr class="w-100 clearfix d-md-none" />
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              Useful links
-            </h6>
-            <p>
-              <a class="text-white">Your Account</a>
-            </p>
-          
-            
-            <p>
-              <a class="text-white">Help</a>
-            </p>
-          </div>
-
-          <!-- Grid column -->
-          <hr class="w-100 clearfix d-md-none" />
-
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!--Grid row-->
-      </section>
-      <!-- Section: Links -->
-
-      <hr class="my-3">
-
-      <!-- Section: Copyright -->
-      <section class="p-3 pt-0">
-        <div class="row d-flex align-items-center">
-          <!-- Grid column -->
-          <div class="col-md-7 col-lg-8 text-center text-md-start">
-            <!-- Copyright -->
-            <div class="p-3">
-              © 2024 Copyright:
-              <a class="text-white" href="https://google.com/"
-                 >MAG</a
-                >
+    <!-- Footer -->
+    <footer
+      class="text-center text-lg-start text-white"
+      style="background-color: #45526e"
+    >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">MAG Magazine</h6>
+              <p>
+               Welcome to MAG, where imagination meets exploration! Our online magazine is a vibrant hub designed exclusively for young minds to embark on thrilling adventures.
+              </p>
             </div>
-            <!-- Copyright -->
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+              <p>
+                <a class="text-white">Register</a>
+              </p>
+              <p>
+                <a class="text-white">Login</a>
+              </p>
+              <p>
+                <a class="text-white">Privacy Policy</a>
+              </p>
+              <p>
+                <a class="text-white">Contact Us</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+              <p>
+                <a class="text-white">Your Account</a>
+              </p>
+
+              <p>
+                <a class="text-white">Help</a>
+              </p>
+            </div>
+
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <p><i class="fas fa-home mr-3"></i> Sri lanka, Colombo</p>
+              <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i> </p>
+              <p><i class="fas fa-print mr-3"></i> </p>
+            </div>
+            <!-- Grid column -->
           </div>
-          <!-- Grid column -->
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
 
-          <!-- Grid column -->
-          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
-            <!-- Facebook -->
-            <a
-               class="btn btn-outline-light btn-floating m-1"
-            
-               role="button"
-               ><i class="fab fa-facebook-f"></i
+        <hr class="my-3" />
+
+        <!-- Section: Copyright -->
+        <section class="p-3 pt-0">
+          <div class="row d-flex align-items-center">
+            <!-- Grid column -->
+            <div class="col-md-7 col-lg-8 text-center text-md-start">
+              <!-- Copyright -->
+              <div class="p-3">
+                © 2024 Copyright:
+                <a class="text-white" href="https://google.com/">MAG</a>
+              </div>
+              <!-- Copyright -->
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-facebook-f"></i
               ></a>
 
-            <!-- Twitter -->
-            <a
-               class="btn btn-outline-light btn-floating m-1"
-              
-               role="button"
-               ><i class="fab fa-twitter"></i
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-twitter"></i
               ></a>
 
-            <!-- Google -->
-            <a
-               class="btn btn-outline-light btn-floating m-1"
-               
-               role="button"
-               ><i class="fab fa-google"></i
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-google"></i
               ></a>
 
-            <!-- Instagram -->
-            <a
-               class="btn btn-outline-light btn-floating m-1"
-              
-               role="button"
-               ><i class="fab fa-instagram"></i
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" role="button"
+                ><i class="fab fa-instagram"></i
               ></a>
+            </div>
+            <!-- Grid column -->
           </div>
-          <!-- Grid column -->
-        </div>
-      </section>
-      <!-- Section: Copyright -->
-    </div>
-    <!-- Grid container -->
-  </footer>
-  <!-- Footer -->
-
-
+        </section>
+        <!-- Section: Copyright -->
+      </div>
+      <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
   </div>
-  
-
-
-  
 </template>
 
 
@@ -422,16 +723,82 @@
 // Import the navigation bar component
 import NavBar from "../components/Nav.vue";
 
+import axios from "axios"; // Import Axios for making HTTP requests
 
 export default {
   components: {
     NavBar, // Register the NavBar component
   },
+  data() {
+    return {
+      users: [],
+      imageUrl: "",
+      uploadSuccess: false, // Track upload success
+      uploadError: false, // Image preview URL
+      selectedImage: null, // Initialize selectedImage to null
+    };
+  },
+  created() {
+    // Fetch users when the component is created
+    this.getUsers();
+  },
+  methods: {
+    async getUsers() {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/users", {
+          withCredentials: true, // Include credentials if using CORS
+        });
+        this.users = response.data; // Assign fetched users to the users array
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    },
+    previewImage(event) {
+      const file = event.target.files[0];
+      if (file && file.type.startsWith("image/")) {
+        this.selectedImage = file; // Set selectedImage to the selected file
+        this.imageUrl = URL.createObjectURL(file); // Set the image preview URL
+      }
+    },
+    async uploaduImage() {
+      try {
+        // Create a FormData object to send the image file
+        const formData = new FormData();
+        formData.append("user_id", 1); // Assuming user ID is 1
+        formData.append("image", this.selectedImage);
+
+        // Make a POST request to upload the image
+        const response = await axios.post(
+          "http://127.0.0.1:8000/api/uimages",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            withCredentials: true, // Include credentials if using CORS
+          }
+        );
+
+        // Log the response
+        console.log("Image uploaded successfully:", response.data);
+
+        // Set upload success message
+        this.uploadSuccess = true;
+        this.uploadError = false; // Reset error message
+      } catch (error) {
+        // Log and handle the error
+        console.error("Error uploading image:", error);
+
+        // Set upload error message
+        this.uploadSuccess = false; // Reset success message
+        this.uploadError = true;
+      }
+    },
+  },
 };
 </script>
 
 <style>
-
 .carousel-item {
   height: 50vh;
   min-height: 350px;
@@ -470,7 +837,6 @@ export default {
   }
 }
 body {
-
   background: #161616;
 }
 h1 {
@@ -584,10 +950,10 @@ h1 {
   background: linear-gradient(135deg, #fe2929, #ffb3c5);
   background-color: #184e8e;
   padding-bottom: 80px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .header-blue {
     padding-bottom: 120px;
   }
@@ -595,15 +961,15 @@ h1 {
 
 .header-blue .navbar {
   background: transparent;
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   color: #fff;
   border-radius: 0;
   box-shadow: none;
   border: none;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .header-blue .navbar {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -620,11 +986,11 @@ h1 {
 }
 
 .header-blue .navbar .navbar-collapse {
-  border-top: 1px solid rgba(255,255,255,0.3);
-  margin-top: .5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 0.5rem;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .header-blue .navbar .navbar-collapse {
     border-color: transparent;
     margin: 0;
@@ -633,7 +999,7 @@ h1 {
 
 .header-blue .navbar .navbar-collapse span .login {
   color: #fff;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   text-decoration: none;
 }
 
@@ -642,17 +1008,18 @@ h1 {
 }
 
 .header-blue .navbar .navbar-toggler {
-  border-color: rgba(255,255,255,0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-.header-blue .navbar .navbar-toggler:hover, .header-blue .navbar-toggler:focus {
+.header-blue .navbar .navbar-toggler:hover,
+.header-blue .navbar-toggler:focus {
   background: none;
 }
 
 @media (min-width: 768px) {
   .header-blue .navbar-nav .nav-link {
-    padding-left: .7rem;
-    padding-right: .7rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
   }
 }
 
@@ -667,34 +1034,38 @@ h1 {
   color: #fff;
 }
 
-.header-blue .navbar.navbar-light .navbar-nav .nav-link:focus, .header-blue .navbar.navbar-light .navbar-nav .nav-link:hover {
+.header-blue .navbar.navbar-light .navbar-nav .nav-link:focus,
+.header-blue .navbar.navbar-light .navbar-nav .nav-link:hover {
   color: #fcfeff !important;
   background-color: transparent;
 }
 
 .header-blue .navbar .navbar-nav > li > .dropdown-menu {
   margin-top: -5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 2px;
 }
 
-.header-blue .navbar .dropdown-menu .dropdown-item:focus, .header-blue .navbar .dropdown-menu .dropdown-item {
+.header-blue .navbar .dropdown-menu .dropdown-item:focus,
+.header-blue .navbar .dropdown-menu .dropdown-item {
   line-height: 2;
   color: #37434d;
 }
 
-.header-blue .navbar .dropdown-menu .dropdown-item:focus, .header-blue .navbar .dropdown-menu .dropdown-item:hover {
+.header-blue .navbar .dropdown-menu .dropdown-item:focus,
+.header-blue .navbar .dropdown-menu .dropdown-item:hover {
   background: #ebeff1;
 }
 
-.header-blue .action-button, .header-blue .action-button:not(.disabled):active {
-  border: 1px solid rgb(255,255,255);
+.header-blue .action-button,
+.header-blue .action-button:not(.disabled):active {
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 40px;
   color: #fff;
   box-shadow: none;
   text-shadow: none;
-  padding: .3rem .8rem;
+  padding: 0.3rem 0.8rem;
   background: transparent;
   transition: background-color 0.25s;
   outline: none;
@@ -730,7 +1101,7 @@ h1 {
   text-align: center;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .header-blue .hero {
     margin-top: 60px;
     text-align: left;
@@ -746,7 +1117,7 @@ h1 {
   line-height: 1.4;
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .header-blue .hero h1 {
     margin-top: 190px;
     margin-bottom: 24px;
@@ -755,7 +1126,7 @@ h1 {
 }
 
 .header-blue .hero p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 20px;
   margin-bottom: 30px;
   font-weight: 300;
@@ -766,10 +1137,10 @@ h1 {
 }
 
 .header-blue div.iphone-mockup {
- position: relative;
-    max-width: 300px;
-    margin-top: 172px;
-    display: inline-block;
+  position: relative;
+  max-width: 300px;
+  margin-top: 172px;
+  display: inline-block;
 }
 
 .header-blue .iphone-mockup img.device {
@@ -793,7 +1164,7 @@ h1 {
 }
 
 .header-blue .iphone-mockup .screen:before {
-  content: '';
+  content: "";
   background-color: #fff;
   position: absolute;
   width: 70%;

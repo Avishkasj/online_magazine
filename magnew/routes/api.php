@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ActivityImgController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/users', [AuthController::class, 'getUsers']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/images', [ImageController::class, 'store']);
+Route::post('/uimages', [ActivityImgController::class, 'store']);
+Route::get('/getuimages', [ActivityImgController::class, 'getData']);
+Route::post('/test', [ImageController::class, 'test']);
